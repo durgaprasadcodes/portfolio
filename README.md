@@ -6,7 +6,20 @@
 
 ✨ Responsive Design • Smooth Scroll Animations • Interactive UI • Modern Glassmorphism
 
-[🌐 Live Demo]([https://your-live-link.com](https://durgaprasad4289.github.io/portfolio/)) • [💻 Source Code](https://github.com/Durgaprasad4289/portfolio)
+<div align="center">
+  
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://durgaprasad4289.github.io/portfolio/">🌐 Live Demo</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Durgaprasad4289/portfolio">💻 Source Code</a>
+    </td>
+  </tr>
+</table>
+
+</div>
 
 </div>
 
