@@ -6,16 +6,26 @@
 
 ✨ Responsive Design • Smooth Scroll Animations • Interactive UI • Modern Glassmorphism
 
-[🌐 Live Demo](https://your-live-link.com) • [💻 Source Code](https://github.com/Durgaprasad4289/portfolio)
+[🌐 Live Demo]([https://your-live-link.com](https://durgaprasad4289.github.io/portfolio/)) • [💻 Source Code](https://github.com/Durgaprasad4289/portfolio)
 
 </div>
 
 ---
 
 ## 📸 Preview
-| Portfolio Preview |
-|------------------|
-| <img src="https://github.com/user-attachments/assets/9afb0615-a211-4bc8-9f74-8a687916e736" alt="Portfolio Preview" width="800"> |
+<div align="center">
+
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/9afb0615-a211-4bc8-9f74-8a687916e736"
+           alt="Portfolio Preview"
+           width="800">
+    </td>
+  </tr>
+</table>
+
+</div>
 
 ---
 
@@ -194,7 +204,6 @@ Feel free to fork the project and submit a pull request.
 
 - GitHub: https://github.com/Durgaprasad4289
 - LinkedIn: https://linkedin.com/in/durgaprasadkota
-- Portfolio: https://your-live-link.com
 
 ---
 
