@@ -29,13 +29,33 @@
    LOGO
 ========================= */
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+}
+
 .logo p {
-    font-size: 1.5rem;
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.75rem);
     font-weight: 700;
     color: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    margin-right: 5px;
 }
 
 .logo span {
+    font-size: clamp(1.4rem, 2vw, 1.75rem);
     color: #7c3aed;
 }
 
@@ -253,7 +273,7 @@
 
 .hero {
     position: relative;
-    min-height: calc(100vh - 80px);
+    min-height: 90vh;
     padding: 160px 8% 80px;
     background: #ffffff;
     overflow: hidden;
@@ -1022,7 +1042,7 @@
 
     .postgres {
         bottom: 14%;
-        right: 14%;
+        right: 10%;
     }
 
     .Ml {

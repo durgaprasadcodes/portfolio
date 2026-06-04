@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Durga Prasad — Portfolio</title>
-    <link rel="icon" href="assets/dp.png">
+    <link rel="icon" href="assets/icon.png" type="image/png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,15 +22,25 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="All_Css/Base.css">
     <link rel="stylesheet" href="All_Css/Home.css">
+    <link rel="stylesheet" href="All_Css/loader.css">
 </head>
 
 <body class="alternate">
 
+    <div class="welcome">
+        <img class="welcome-logo" src="assets/icon.png" alt="Logo">
+        <h1>Welcome to My Portfolio</h1>
+
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+
+    </div>
 
     <!-- ═══════════ NAVBAR ═══════════ -->
-    <section class="navbar">
+    <section class="navbar" class="activiteAfterLoad">
         <div class="logo">
-            <p><span data-text="Durga Prasad"><i class="fas fa-code code"></i> Durga Prasad</span>.dev</p>
+            <p><img src="assets/icon.png" alt="Profile Image"><span> Durga Prasad</span>.dev</p>
         </div>
         <div class="nav-bar">
             <a href="#home">Home</a>
@@ -44,7 +54,7 @@
     </section>
 
     <!-- ═══════════ SIDEBAR ═══════════ -->
-    <section class="side-bar">
+    <section class="side-bar" class="activiteAfterLoad">
         <button class="cross">&times;</button>
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -55,7 +65,7 @@
     </section>
 
     <!-- ═══════════ HERO ═══════════ -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" class="activiteAfterLoad">
         <div class="hero-inner">
             <div class="hero-left">
                 <div class="hero-subtitle reveal">
@@ -66,7 +76,8 @@
                     <span class="role-line typed-role"></span>
                 </div>
                 <p class="hero-desc reveal">
-                    I build scalable web applications and machine learning solutions that solve real-world problems and
+                    I build scalable web applications and machine learning solutions that solve real-world problems
+                    and
                     create impact.
                 </p>
                 <div class="hero-btns reveal">
@@ -193,11 +204,206 @@
             });
         </script>
     </section>
+
+    <!-- ═══════════ ABOUT ═══════════ -->
+    <section class="about" id="about" class="activiteAfterLoad">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="label">Who I Am</div>
+                <h2><span class="grad-text">About</span> Me</h2>
+                <hr class="rule">
+            </div>
+            <div class="about-grid">
+                <div class="intro-card reveal from-left">
+                    <div class="intro-icon"><i class="fas fa-user-astronaut"></i></div>
+                    <p>I'm <strong>Durga Prasad</strong>, a dedicated student at RCCE with a strong passion for
+                        <strong>Artificial Intelligence, Machine Learning &amp; Web Development.</strong>
+                        I enjoy transforming real-world challenges into scalable solutions through clean and
+                        efficient
+                        code.
+                    </p>
+                    <p>With a focus on performance, simplicity, and user-centric design, I build functional and
+                        engaging
+                        web experiences that balance creativity with practicality. Constantly exploring emerging
+                        technologies,
+                        I believe in continuous learning and coding with purpose.
+                    </p>
+                </div>
+                <div class="about-info">
+                    <div class="info-card reveal">
+                        <div class="card-head">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Education</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="entry">
+                                <span class="entry-year">2024 – Present</span>
+                                <h4>B.Tech — CSE (AIML)</h4>
+                                <p>Ramachandra College of Engineering, Eluru</p>
+                            </div>
+                            <div class="entry">
+                                <span class="entry-year">2022 – 2024</span>
+                                <h4>Intermediate — MPC</h4>
+                                <p>Venkateswara Junior College, JRG</p>
+                            </div>
+                            <div class="entry">
+                                <span class="entry-year">2021 – 2022</span>
+                                <h4>SSC</h4>
+                                <p>Zphs School, Dwaraka Tirumala</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-card reveal">
+                        <div class="card-head">
+                            <i class="fas fa-code"></i>
+                            <h3>Core Tech</h3>
+                        </div>
+                        <div class="card-body tags-body">
+                            <div class="tag-list">
+                                <span>Python</span><span>HTML</span><span>CSS</span>
+                                <span>JavaScript</span><span>React</span><span>FastAPI</span>
+                                <span>MongoDB</span><span>SQL</span><span>PostgreSQL</span>
+                                <span>Git</span><span>Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- ═══════════ SKILLS ═══════════ -->
+    <!-- <section class="skills" id="skills" class="activiteAfterLoad">
+        <div class="section-header reveal">
+            <div class="label">What I Know</div>
+            <h2><span class="grad-text">My</span> Skills</h2>
+            <hr class="rule">
+        </div>
+
+        <div class="skill-grid">
+            <div class="skill-card reveal from-left">
+                <div class="skill-card-title">
+                    <div>
+                        <h3><em>Web</em> Development</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="bar-list">
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="bar-pct">95%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--w:95%"></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span><i class="fab fa-css3-alt"></i> CSS3</span>
+                            <span class="bar-pct">90%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--w:90%"></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="bar-pct">85%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--w:85%"></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span><i class="fab fa-react"></i> React</span>
+                            <span class="bar-pct">80%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--w:80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="skill-card reveal from-right">
+                <div class="skill-card-title">
+                    <div>
+                        <h3><em>Coding</em> Proficiencies</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="circle-grid">
+                    <div class="circle-item" style="--r-val:90">
+                        <div class="circle-inner"></div>
+                        <div class="circle-content">
+                            <i class="fab fa-python"></i>
+                            <span class="pct">90%</span>
+                            <span class="lbl">Python</span>
+                        </div>
+                    </div>
+                    <div class="circle-item" style="--r-val:80">
+                        <div class="circle-inner"></div>
+                        <div class="circle-content">
+                            <i class="fab fa-java"></i>
+                            <span class="pct">80%</span>
+                            <span class="lbl">Java</span>
+                        </div>
+                    </div>
+                    <div class="circle-item" style="--r-val:85">
+                        <div class="circle-inner"></div>
+                        <div class="circle-content">
+                            <i class="fab fa-js-square"></i>
+                            <span class="pct">85%</span>
+                            <span class="lbl">JS ES6+</span>
+                        </div>
+                    </div>
+                    <div class="circle-item" style="--r-val:75">
+                        <div class="circle-inner"></div>
+                        <div class="circle-content">
+                            <i class="fas fa-copyright"></i>
+                            <span class="pct">75%</span>
+                            <span class="lbl">C / C++</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Certifications -->
+    <!-- <section class="certifications" id="certifications" class="activiteAfterLoad"></section> -->
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <!-- <footer class="footer" class="activiteAfterLoad">
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/durga-prasad-kota-9a5b65320" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Durgaprasad-kota" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://leetcode.com/u/Prashanth_Naidu/" target="_blank"><i class="fas fa-code"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">&copy; 2025 Durga Prasad's Portfolio. All rights reserved.</p>
+            <nav class="footer-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </footer> -->
+
+    <!-- ═══════════ CURSOR ═══════════ -->
+    <!-- <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div> -->
 
 </body>
 
 </html>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
