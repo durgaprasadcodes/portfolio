@@ -1,0 +1,934 @@
+/* ==========================================
+   ABOUT SECTION — Elevated v2
+========================================== */
+
+/* ── Design tokens ── */
+:root {
+    --purple-50: #faf5ff;
+    --purple-100: #f3e8ff;
+    --purple-200: #e9d5ff;
+    --purple-400: #c084fc;
+    --purple-600: #9333ea;
+    --purple-700: #7e22ce;
+    --purple-800: #6b21a8;
+    --purple-900: #581c87;
+
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-400: #94a3b8;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+
+    --about-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+    --about-shadow-md: 0 4px 16px rgba(147, 51, 234, 0.06), 0 2px 6px rgba(15, 23, 42, 0.04);
+    --about-shadow-lg: 0 16px 48px rgba(147, 51, 234, 0.10), 0 4px 16px rgba(15, 23, 42, 0.05);
+    --about-shadow-xl: 0 32px 64px rgba(147, 51, 234, 0.14), 0 8px 24px rgba(15, 23, 42, 0.06);
+
+    --about-radius-sm: 12px;
+    --about-radius-md: 18px;
+    --about-radius-lg: 24px;
+    --about-radius-xl: 32px;
+
+    --about-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --about-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --about-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --about-transition: 0.35s var(--about-ease-out);
+}
+
+/* ── Section shell ── */
+.about {
+    position: relative;
+    padding: 120px 0;
+    background: #ffffff;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.about::before,
+.about::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about::before {
+    width: 700px;
+    height: 700px;
+    top: -180px;
+    right: -200px;
+    background: radial-gradient(circle at 40% 40%,
+            rgba(147, 51, 234, 0.055) 0%,
+            transparent 65%);
+    filter: blur(72px);
+}
+
+.about::after {
+    width: 500px;
+    height: 500px;
+    bottom: -120px;
+    left: -100px;
+    background: radial-gradient(circle at 60% 60%,
+            rgba(192, 132, 252, 0.04) 0%,
+            transparent 70%);
+    filter: blur(60px);
+}
+
+.about .about-texture {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(147, 51, 234, 0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+    opacity: 0.4;
+}
+
+/* ── Container ── */
+.about .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Gradient text ── */
+.about .grad-text {
+    background: linear-gradient(125deg, var(--purple-700) 0%, var(--purple-400) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ── Section header ── */
+.about .section-header {
+    text-align: center;
+    margin-bottom: 72px;
+}
+
+@keyframes about-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.7);
+    }
+}
+
+.about .section-header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.4rem, 4.8vw, 3.4rem);
+    font-weight: 800;
+    color: var(--slate-900);
+    margin-bottom: 20px;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+}
+
+.about .section-header .rule {
+    border: none;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(90deg, var(--purple-700), var(--purple-400), transparent);
+    border-radius: 2px;
+    margin: 0 auto;
+    animation: about-rule-grow 0.8s var(--about-ease-out) 0.3s forwards;
+}
+
+@keyframes about-rule-grow {
+    to {
+        width: 80px;
+    }
+}
+
+/* ── Grid layout ── */
+.about-grid {
+    display: grid;
+    columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* ────────────────────────────────────────
+   SHARED CARD BASE
+──────────────────────────────────────── */
+.intro-card,
+.info-card {
+    background: #ffffff;
+    border-radius: var(--about-radius-lg);
+    border: 1px solid rgba(147, 51, 234, 0.10);
+    box-shadow: var(--about-shadow-md);
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform var(--about-transition),
+        box-shadow var(--about-transition),
+        border-color var(--about-transition);
+    will-change: transform;
+}
+
+.info-card {
+    display: flex;
+    gap: 4%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.experience,
+.education {
+    width: 50%;
+}
+
+.intro-card::before,
+.info-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.95) 30%,
+            rgba(255, 255, 255, 0.95) 70%,
+            transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.intro-card::after,
+.info-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle at top right,
+            rgba(147, 51, 234, 0.05) 0%,
+            transparent 60%);
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity var(--about-transition);
+    opacity: 0.6;
+}
+
+.intro-card:hover,
+.info-card:hover {
+    transform: translateY(-6px) scale(1.005);
+    box-shadow: var(--about-shadow-xl);
+    border-color: rgba(147, 51, 234, 0.22);
+}
+
+.intro-card:hover::after,
+.info-card:hover::after {
+    opacity: 1;
+}
+
+/* ── Intro card (left) ── */
+.intro-card {
+    padding: 48px;
+}
+
+.intro-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(145deg, var(--purple-600), var(--purple-400));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+    box-shadow:
+        0 8px 24px rgba(147, 51, 234, 0.28),
+        0 2px 6px rgba(147, 51, 234, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition: transform 0.45s var(--about-ease-spring), box-shadow 0.35s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.intro-card:hover .intro-icon {
+    transform: rotate(-5deg) scale(1.18);
+    box-shadow:
+        0 16px 40px rgba(147, 51, 234, 0.36),
+        0 4px 12px rgba(147, 51, 234, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.intro-card .intro-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.intro-card p {
+    font-size: 1.075rem;
+    line-height: 1.9;
+    color: var(--slate-600);
+    position: relative;
+    z-index: 2;
+}
+
+.intro-card p strong {
+    color: var(--slate-800);
+    font-weight: 650;
+}
+
+/* ── About info column (right) ── */
+.about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.info-card {
+    padding: 36px 40px;
+}
+
+.info-card .card-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 2;
+}
+
+.info-card .card-head i {
+    font-size: 1.25rem;
+    color: var(--purple-700);
+    background: var(--purple-50);
+    width: 46px;
+    height: 46px;
+    border-radius: var(--about-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--purple-100);
+    transition:
+        background var(--about-transition),
+        color var(--about-transition),
+        transform 0.4s var(--about-ease-spring),
+        box-shadow var(--about-transition);
+    flex-shrink: 0;
+}
+
+.info-card:hover .card-head i {
+    background: var(--purple-700);
+    color: #ffffff;
+    transform: scale(1.08) rotate(-4deg);
+    box-shadow: 0 8px 20px rgba(147, 51, 234, 0.30);
+    border-color: var(--purple-700);
+}
+
+.info-card .card-head h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--slate-900);
+    letter-spacing: -0.01em;
+}
+
+/* ── Education timeline ── */
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.education-item {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.3rem;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid rgba(147, 51, 234, .1);
+    transition: .3s;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(147, 51, 234, .12);
+}
+
+.edu-icon {
+    min-width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #9333ea;
+    background: linear-gradient(135deg, #faf5ff, #e9d5ff);
+}
+
+.edu-content {
+    width: 100%;
+}
+
+.edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: .4rem;
+}
+
+.edu-top h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.edu-score {
+    padding: .35rem .8rem;
+    border-radius: 50px;
+    background: #9333ea;
+    color: #fff;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.edu-college {
+    color: #4b5563;
+    margin: .5rem 0;
+}
+
+.edu-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.edu-meta span {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    font-size: .9rem;
+    color: #6b7280;
+}
+
+
+/* ── Tech stack tags ── */
+.about-info .tags-body {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    position: relative;
+    z-index: 2;
+}
+
+.tags-body::before {
+    display: none;
+}
+
+.tags-body .Frontend-list,
+.tags-body .Backend-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.tags-body h2 {
+    font-size: 0.73rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--slate-400);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.tags-body .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags-body .tags span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--slate-50);
+    border: 1px solid var(--slate-200);
+    color: var(--slate-700);
+    padding: 7px 14px;
+    border-radius: var(--about-radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: default;
+    transition:
+        background var(--about-transition),
+        border-color var(--about-transition),
+        color var(--about-transition),
+        transform 0.35s var(--about-ease-spring),
+        box-shadow var(--about-transition);
+    will-change: transform;
+}
+
+.tags-body .tags span i {
+    font-size: 1rem;
+    transition: transform 0.35s var(--about-ease-spring);
+    flex-shrink: 0;
+}
+
+.tags-body .tags span:hover {
+    background: var(--purple-50);
+    border-color: var(--purple-200);
+    color: var(--purple-700);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(147, 51, 234, 0.10);
+}
+
+.tags-body .tags span:hover i {
+    transform: scale(1.25) rotate(-5deg);
+}
+
+/* ==========================================
+   REVEAL ANIMATIONS
+   IntersectionObserver adds .visible to
+   trigger each keyframe sequence.
+========================================== */
+
+/* ── Keyframes ── */
+
+/* Fade up — default for .reveal */
+@keyframes about-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in from left — used for intro card */
+@keyframes about-fade-left {
+    from {
+        opacity: 0;
+        transform: translateX(-32px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade in from right — used for info column */
+@keyframes about-fade-right {
+    from {
+        opacity: 0;
+        transform: translateX(32px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale + fade — used for section header */
+@keyframes about-scale-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Slide in for individual stagger children */
+@keyframes about-child-in {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Base state: hidden before .visible is added ── */
+.about .reveal,
+.about .reveal-stagger>* {
+    opacity: 0;
+}
+
+/* ── Generic .reveal — fade up ── */
+.about .reveal {
+    animation: none;
+    /* stays invisible until .visible */
+}
+
+.about .reveal.visible {
+    animation: about-fade-up 0.72s var(--about-ease-out) both;
+}
+
+/* ── Section header — scale in ── */
+.about .section-header.reveal.visible {
+    animation: about-scale-in 0.7s var(--about-ease-out) both;
+}
+
+/* ── Intro card — fade from left ── */
+.about .intro-card.reveal.visible {
+    animation: about-fade-left 0.75s var(--about-ease-out) 0.1s both;
+}
+
+/* ── Info column wrapper — fade from right ── */
+.about .about-info.reveal.visible {
+    animation: about-fade-right 0.75s var(--about-ease-out) 0.18s both;
+}
+
+/* ── Stagger group: each child animates in sequence ── */
+.about .reveal-stagger>* {
+    animation: none;
+}
+
+.about .reveal-stagger.visible>*:nth-child(1) {
+    animation: about-child-in 0.6s var(--about-ease-out) 0.05s both;
+}
+
+.about .reveal-stagger.visible>*:nth-child(2) {
+    animation: about-child-in 0.6s var(--about-ease-out) 0.15s both;
+}
+
+.about .reveal-stagger.visible>*:nth-child(3) {
+    animation: about-child-in 0.6s var(--about-ease-out) 0.25s both;
+}
+
+.about .reveal-stagger.visible>*:nth-child(4) {
+    animation: about-child-in 0.6s var(--about-ease-out) 0.35s both;
+}
+
+/* ── Tag spans stagger inside a visible card ── */
+.about .info-card.visible .tags-body .tags span,
+.about .reveal-stagger.visible .tags-body .tags span {
+    animation: about-child-in 0.5s var(--about-ease-out) both;
+}
+
+.about .info-card.visible .tags-body .tags span:nth-child(1),
+.about .reveal-stagger.visible .tags-body .tags span:nth-child(1) {
+    animation-delay: 0.28s;
+}
+
+.about .info-card.visible .tags-body .tags span:nth-child(2),
+.about .reveal-stagger.visible .tags-body .tags span:nth-child(2) {
+    animation-delay: 0.34s;
+}
+
+.about .info-card.visible .tags-body .tags span:nth-child(3),
+.about .reveal-stagger.visible .tags-body .tags span:nth-child(3) {
+    animation-delay: 0.40s;
+}
+
+.about .info-card.visible .tags-body .tags span:nth-child(4),
+.about .reveal-stagger.visible .tags-body .tags span:nth-child(4) {
+    animation-delay: 0.46s;
+}
+
+.about .info-card.visible .tags-body .tags span:nth-child(5),
+.about .reveal-stagger.visible .tags-body .tags span:nth-child(5) {
+    animation-delay: 0.52s;
+}
+
+.about .info-card.visible .tags-body .tags span:nth-child(6),
+.about .reveal-stagger.visible .tags-body .tags span:nth-child(6) {
+    animation-delay: 0.58s;
+}
+
+.about .info-card.visible .tags-body .tags span:nth-child(n+7),
+.about .reveal-stagger.visible .tags-body .tags span:nth-child(n+7) {
+    animation-delay: 0.62s;
+}
+
+/* ── Timeline entries stagger inside a visible card ── */
+.about .info-card.visible .entry,
+.about .reveal-stagger.visible .entry {
+    animation: about-child-in 0.55s var(--about-ease-out) both;
+}
+
+.about .info-card.visible .entry:nth-child(1),
+.about .reveal-stagger.visible .entry:nth-child(1) {
+    animation-delay: 0.22s;
+}
+
+.about .info-card.visible .entry:nth-child(2),
+.about .reveal-stagger.visible .entry:nth-child(2) {
+    animation-delay: 0.32s;
+}
+
+.about .info-card.visible .entry:nth-child(3),
+.about .reveal-stagger.visible .entry:nth-child(3) {
+    animation-delay: 0.42s;
+}
+
+.about .info-card.visible .entry:nth-child(n+4),
+.about .reveal-stagger.visible .entry:nth-child(n+4) {
+    animation-delay: 0.50s;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1024px) {
+    .about {
+        padding: 96px 0;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .intro-card {
+        padding: 40px;
+    }
+
+    /* On single-column layout both cards fade up (no left/right offset) */
+    .about .intro-card.reveal.visible,
+    .about .about-info.reveal.visible {
+        animation: about-fade-up 0.72s var(--about-ease-out) 0.1s both;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 72px 0;
+    }
+
+    .about .container {
+        padding: 0 1.5rem;
+    }
+
+    .about .section-header {
+        margin-bottom: 52px;
+    }
+
+    .intro-card {
+        padding: 32px;
+    }
+
+    .info-card {
+        padding: 28px 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about {
+        padding: 56px 0;
+    }
+
+    .about .section-header h1 {
+        font-size: 2rem;
+    }
+
+    .intro-card {
+        padding: 24px;
+    }
+
+    .intro-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 1.3rem;
+        border-radius: 15px;
+        margin-bottom: 24px;
+    }
+
+    .intro-card p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .info-card {
+        padding: 22px 20px;
+    }
+
+    .info-card .card-head {
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .info-card .card-head i {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        border-radius: 10px;
+    }
+
+    .info-card .card-head h1 {
+        font-size: 1.15rem;
+    }
+
+    .about-info .card-body {
+        flex-direction: column;
+        padding-left: 20px;
+        gap: 22px;
+    }
+
+    .about-info .card-body::before {
+        left: 2px;
+    }
+
+    .about-info .entry::before {
+        left: -20px;
+        width: 8px;
+        height: 8px;
+        border-width: 2px;
+        top: 6px;
+    }
+
+    .tags-body .tags span {
+        padding: 6px 11px;
+        font-size: 0.835rem;
+        border-radius: 10px;
+    }
+
+    .tags-body .tags {
+        gap: 7px;
+    }
+
+    .about-info {
+        gap: 18px;
+    }
+}
+
+/* Tablet */
+@media (max-width:768px) {
+
+    .education-item {
+        padding: 1.1rem;
+        gap: 1rem;
+    }
+
+    .edu-icon {
+        min-width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .edu-top h4 {
+        font-size: 1rem;
+    }
+
+    .edu-score {
+        font-size: .8rem;
+        padding: .3rem .7rem;
+    }
+
+    .edu-college {
+        font-size: .95rem;
+    }
+
+    .edu-meta {
+        gap: .75rem;
+    }
+
+    .edu-meta span {
+        font-size: .85rem;
+    }
+}
+
+/* Mobile */
+@media (max-width:576px) {
+
+    .education-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .9rem;
+        padding: 1rem;
+    }
+
+    .edu-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .edu-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .6rem;
+    }
+
+    .edu-top h4 {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .edu-score {
+        align-self: flex-start;
+    }
+
+    .edu-college {
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+    .edu-meta {
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .edu-meta span {
+        font-size: .85rem;
+    }
+}
+
+/* Very Small Devices */
+@media (max-width:380px) {
+
+    .education-item {
+        padding: .9rem;
+    }
+
+    .edu-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 1rem;
+    }
+
+    .edu-top h4 {
+        font-size: .95rem;
+    }
+
+    .edu-score {
+        font-size: .75rem;
+        padding: .25rem .6rem;
+    }
+
+    .edu-college {
+        font-size: .85rem;
+    }
+
+    .edu-meta span {
+        font-size: .8rem;
+    }
+}

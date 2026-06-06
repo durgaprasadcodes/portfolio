@@ -20,9 +20,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="All_Css/Base.css">
-    <link rel="stylesheet" href="All_Css/Home.css">
-    <link rel="stylesheet" href="All_Css/loader.css">
+    <link rel="stylesheet" href="All_css/Base.css">
+    <link rel="stylesheet" href="All_css/Home.css">
+    <link rel="stylesheet" href="All_css/About.css">
+    <link rel="stylesheet" href="All_css/loader.css">
 </head>
 
 <body class="alternate">
@@ -38,7 +39,7 @@
     </div>
 
     <!-- ═══════════ NAVBAR ═══════════ -->
-    <section class="navbar" class="activiteAfterLoad">
+    <section class="navbar activiteAfterLoad">
         <div class="logo">
             <p><img src="assets/icon.png" alt="Profile Image"><span> Durga Prasad</span>.dev</p>
         </div>
@@ -47,6 +48,7 @@
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#certification">Certifications</a>
             <a href="#contact">Contact</a>
             <button class="resume">My Resume <i class="fas fa-download"></i></button>
         </div>
@@ -54,18 +56,19 @@
     </section>
 
     <!-- ═══════════ SIDEBAR ═══════════ -->
-    <section class="side-bar" class="activiteAfterLoad">
+    <section class="side-bar activiteAfterLoad">
         <button class="cross">&times;</button>
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#certification">Certifications</a>
         <a href="#contact">Contact</a>
         <button class="resume">My Resume <i class="fas fa-download"></i></button>
     </section>
 
     <!-- ═══════════ HERO ═══════════ -->
-    <section class="hero" id="home" class="activiteAfterLoad">
+    <section class="hero activiteAfterLoad" id="home">
         <div class="hero-inner">
             <div class="hero-left">
                 <div class="hero-subtitle reveal">
@@ -206,69 +209,131 @@
     </section>
 
     <!-- ═══════════ ABOUT ═══════════ -->
-    <section class="about" id="about" class="activiteAfterLoad">
+    <section class="about activiteAfterLoad" id="about">
         <div class="container">
             <div class="section-header reveal">
                 <div class="label">Who I Am</div>
-                <h2><span class="grad-text">About</span> Me</h2>
+                <h1><span class="grad-text">About</span> Me</h1>
                 <hr class="rule">
             </div>
             <div class="about-grid">
                 <div class="intro-card reveal from-left">
-                    <div class="intro-icon"><i class="fas fa-user-astronaut"></i></div>
+                    <div class="intro-icon"><img src="assets/me.jpeg" alt="Durga Prasad"> </div>
                     <p>I'm <strong>Durga Prasad</strong>, a dedicated student at RCCE with a strong passion for
                         <strong>Artificial Intelligence, Machine Learning &amp; Web Development.</strong>
                         I enjoy transforming real-world challenges into scalable solutions through clean and
-                        efficient
-                        code.
-                    </p>
-                    <p>With a focus on performance, simplicity, and user-centric design, I build functional and
-                        engaging
-                        web experiences that balance creativity with practicality. Constantly exploring emerging
-                        technologies,
-                        I believe in continuous learning and coding with purpose.
+                        efficient code With a focus on performance, simplicity, and user-centric design
                     </p>
                 </div>
                 <div class="about-info">
                     <div class="info-card reveal">
                         <div class="card-head">
                             <i class="fas fa-graduation-cap"></i>
-                            <h3>Education</h3>
+                            <h1>Education</h1>
                         </div>
-                        <div class="card-body">
-                            <div class="entry">
-                                <span class="entry-year">2024 – Present</span>
-                                <h4>B.Tech — CSE (AIML)</h4>
-                                <p>Ramachandra College of Engineering, Eluru</p>
+                        <div class="card-body education-list">
+
+                            <div class="entry education-item">
+                                <div class="edu-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+
+                                <div class="edu-content">
+                                    <div class="edu-top">
+                                        <h4>B.Tech - CSE (AI & ML)</h4>
+                                        <span class="edu-score">CGPA 8.9</span>
+                                    </div>
+
+                                    <p class="edu-college">
+                                        Ramachandra College of Engineering, Eluru
+                                    </p>
+
+                                    <div class="edu-meta">
+                                        <span><i class="fas fa-calendar"></i> 2024 - Present</span>
+                                        <span><i class="fas fa-brain"></i> AI & ML</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="entry">
-                                <span class="entry-year">2022 – 2024</span>
-                                <h4>Intermediate — MPC</h4>
-                                <p>Venkateswara Junior College, JRG</p>
+
+                            <div class="entry education-item">
+                                <div class="edu-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+
+                                <div class="edu-content">
+                                    <div class="edu-top">
+                                        <h4>Intermediate (MPC)</h4>
+                                        <span class="edu-score">91%</span>
+                                    </div>
+
+                                    <p class="edu-college">
+                                        Venkateswara Junior College, Jangareddygudem
+                                    </p>
+
+                                    <div class="edu-meta">
+                                        <span><i class="fas fa-calendar"></i> 2022 - 2024</span>
+                                        <span><i class="fas fa-square-root-alt"></i> MPC</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="entry">
-                                <span class="entry-year">2021 – 2022</span>
-                                <h4>SSC</h4>
-                                <p>Zphs School, Dwaraka Tirumala</p>
+
+                            <div class="entry education-item">
+                                <div class="edu-icon">
+                                    <i class="fas fa-school"></i>
+                                </div>
+
+                                <div class="edu-content">
+                                    <div class="edu-top">
+                                        <h4>Secondary School (SSC)</h4>
+                                        <span class="edu-score">90%</span>
+                                    </div>
+
+                                    <p class="edu-college">
+                                        ZPHS School, East Yadavalli
+                                    </p>
+
+                                    <div class="edu-meta">
+                                        <span><i class="fas fa-calendar"></i> 2021 - 2022</span>
+                                        <span><i class="fas fa-certificate"></i> SSC</span>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                     </div>
-                    <div class="info-card reveal">
-                        <div class="card-head">
-                            <i class="fas fa-code"></i>
-                            <h3>Core Tech</h3>
+                </div>
+                <div class="info-card reveal">
+                    <div class="card-head">
+                        <i class="fas fa-code"></i>
+                        <h1>Core Tech</h1>
+                    </div>
+                    <div class="card-body tags-body">
+                        <div class="Frontend-list">
+                            <h2>Frontend</h2>
+                            <div class="tags">
+                                <span> <i class="devicon-react-plain colored"></i> React.js</span>
+                                <span><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+                                <span><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+                                <span><i class="devicon-html5-plain colored"></i> HTML</span>
+                                <span><i class="devicon-css3-plain colored"></i> CSS</span>
+                            </div>
                         </div>
-                        <div class="card-body tags-body">
-                            <div class="tag-list">
-                                <span>Python</span><span>HTML</span><span>CSS</span>
-                                <span>JavaScript</span><span>React</span><span>FastAPI</span>
-                                <span>MongoDB</span><span>SQL</span><span>PostgreSQL</span>
-                                <span>Git</span><span>Docker</span>
+                        <div class="Backend-list">
+                            <h2>Backend</h2>
+                            <div class="tags">
+                                <span><i class="devicon-python-plain colored"></i> Python</span>
+                                <span><i class="devicon-fastapi-plain colored"></i> FastAPI</span>
+                                <span><i class="devicon-django-plain colored"></i> Django</span>
+                                <span><i class="fas fa-brain"></i> Machine Leaning</span>
+                                <span><i class="devicon-postgresql-plain colored"></i> PostgresSQL</span>
+                                <span><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                                <span><i class="devicon-docker-plain colored"></i> Docker</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 

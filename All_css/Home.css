@@ -888,8 +888,8 @@
 
     /* Tighter ring positions */
     .html {
-        top: 4%;
-        left: 14%;
+        top: 5%;
+        left: 17%;
     }
 
     .typescript {
@@ -898,43 +898,48 @@
     }
 
     .css {
-        top: 28%;
+        top: 22%;
         left: 0%;
     }
 
     .python {
-        top: 28%;
-        right: 0%;
+        top: 8%;
+        right: 16%;
     }
 
     .javascript {
-        top: 54%;
+        top: 45%;
         left: 0%;
     }
 
     .django {
-        top: 54%;
-        right: 0%;
+        top: 25%;
+        right: 3%;
     }
 
     .react {
-        bottom: 12%;
-        left: 12%;
+        top: 68%;
+        left: 6%;
     }
 
     .fastapi {
         bottom: 12%;
-        right: 12%;
+        right: 2%;
     }
 
     .docker {
         bottom: 0%;
-        left: 33%;
+        left: 30%;
     }
 
     .postgres {
         bottom: 0%;
-        right: 33%;
+        right: 30%;
+    }
+
+    .Ml {
+        bottom: 11%;
+        right: 7%;
     }
 
     .hero-title {
@@ -996,12 +1001,12 @@
 
     /* Compact ring positions */
     .html {
-        top: 5%;
-        left: 15%;
+        top: 4%;
+        left: 17%;
     }
 
     .typescript {
-        top: 3%;
+        top: 0%;
         right: 12%;
     }
 
@@ -1011,8 +1016,8 @@
     }
 
     .python {
-        top: 11%;
-        right: 9%;
+        top: 8%;
+        right: 12%;
     }
 
     .javascript {
