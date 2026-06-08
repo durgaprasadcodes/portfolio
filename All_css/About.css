@@ -1,9 +1,10 @@
 /* ==========================================
-   ABOUT SECTION — Elevated v2
+   ABOUT SECTION — Elevated v2 (Polished)
 ========================================== */
 
 /* ── Design tokens ── */
 :root {
+    /* Color Palette (Preserved) */
     --purple-50: #faf5ff;
     --purple-100: #f3e8ff;
     --purple-200: #e9d5ff;
@@ -22,32 +23,44 @@
     --slate-800: #1e293b;
     --slate-900: #0f172a;
 
-    --about-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
-    --about-shadow-md: 0 4px 16px rgba(147, 51, 234, 0.06), 0 2px 6px rgba(15, 23, 42, 0.04);
-    --about-shadow-lg: 0 16px 48px rgba(147, 51, 234, 0.10), 0 4px 16px rgba(15, 23, 42, 0.05);
-    --about-shadow-xl: 0 32px 64px rgba(147, 51, 234, 0.14), 0 8px 24px rgba(15, 23, 42, 0.06);
+    /* Spacing System (Refined Visual Rhythm) */
+    --space-xs: 0.5rem;    /* 8px */
+    --space-sm: 0.75rem;   /* 12px */
+    --space-md: 1rem;      /* 16px */
+    --space-lg: 1.5rem;    /* 24px */
+    --space-xl: 2rem;      /* 32px */
+    --space-xxl: 3rem;     /* 48px */
+    --space-section: clamp(4rem, 7vw, 6rem); /* Optimized fluid section padding */
 
+    /* Premium Multi-Layered Shadows (Linear/Vercel Style Depth) */
+    --about-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+    --about-shadow-md: 0 4px 20px -2px rgba(147, 51, 234, 0.03), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+    --about-shadow-lg: 0 12px 36px -4px rgba(147, 51, 234, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+    --about-shadow-xl: 0 24px 48px -8px rgba(147, 51, 234, 0.08), 0 8px 20px -4px rgba(147, 51, 234, 0.04);
+
+    /* Radii */
     --about-radius-sm: 12px;
     --about-radius-md: 18px;
     --about-radius-lg: 24px;
     --about-radius-xl: 32px;
 
-    --about-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    --about-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    /* Transitions & Curves (Subtle & Premium) */
+    --about-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.15); /* Toned down spring bounce */
+    --about-ease-out: cubic-bezier(0.25, 1, 0.5, 1); /* Smooth cubic curve */
     --about-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-
-    --about-transition: 0.35s var(--about-ease-out);
+    --about-transition: 0.3s var(--about-ease-out);
 }
 
 /* ── Section shell ── */
 .about {
     position: relative;
-    padding: 120px 0;
+    padding: var(--space-section) 0;
     background: #ffffff;
     overflow: hidden;
     isolation: isolate;
 }
 
+/* Decorative background glow circles (Optimized to prevent paint lag) */
 .about::before,
 .about::after {
     content: "";
@@ -58,25 +71,25 @@
 }
 
 .about::before {
-    width: 700px;
-    height: 700px;
-    top: -180px;
-    right: -200px;
+    width: clamp(280px, 45vw, 650px);
+    height: clamp(280px, 45vw, 650px);
+    top: -8%;
+    right: -8%;
     background: radial-gradient(circle at 40% 40%,
-            rgba(147, 51, 234, 0.055) 0%,
+            rgba(147, 51, 234, 0.04) 0%,
             transparent 65%);
-    filter: blur(72px);
+    filter: blur(64px);
 }
 
 .about::after {
-    width: 500px;
-    height: 500px;
-    bottom: -120px;
-    left: -100px;
+    width: clamp(180px, 30vw, 450px);
+    height: clamp(180px, 30vw, 450px);
+    bottom: -8%;
+    left: -8%;
     background: radial-gradient(circle at 60% 60%,
-            rgba(192, 132, 252, 0.04) 0%,
+            rgba(192, 132, 252, 0.03) 0%,
             transparent 70%);
-    filter: blur(60px);
+    filter: blur(52px);
 }
 
 .about .about-texture {
@@ -84,18 +97,18 @@
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    background-image: radial-gradient(circle, rgba(147, 51, 234, 0.06) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(147, 51, 234, 0.04) 1px, transparent 1px);
     background-size: 28px 28px;
     -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
-    opacity: 0.4;
+    opacity: 0.35;
 }
 
 /* ── Container ── */
 .about .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 var(--space-xl);
     position: relative;
     z-index: 1;
 }
@@ -111,30 +124,25 @@
 /* ── Section header ── */
 .about .section-header {
     text-align: center;
-    margin-bottom: 72px;
+    margin-bottom: clamp(2rem, 4.5vw, 3.5rem); /* Polished margin for visual balance */
 }
 
-@keyframes about-pulse {
-
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.4;
-        transform: scale(0.7);
-    }
+.about .section-header .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--slate-600); /* Upgraded color for WCAG AA readability */
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
 }
 
 .about .section-header h1 {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2.4rem, 4.8vw, 3.4rem);
+    font-size: clamp(2rem, 4vw, 3rem); /* Refined fluid typographic scale */
     font-weight: 800;
     color: var(--slate-900);
-    margin-bottom: 20px;
-    letter-spacing: -0.025em;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.03em; /* Tight letter spacing for premium look */
     line-height: 1.1;
 }
 
@@ -150,26 +158,52 @@
 
 @keyframes about-rule-grow {
     to {
-        width: 80px;
+        width: 60px;
     }
 }
 
 /* ── Grid layout ── */
 .about-grid {
-    display: grid;
-    columns: 1fr 1fr;
-    gap: 32px;
-    align-items: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--space-xl);
+    width: 100%;
+}
+
+/* ── .my-info row ── */
+.my-info {
+    display: flex;
+    align-items: stretch; /* Match heights of biography and education columns */
+    justify-content: space-between;
+    gap: var(--space-xl);
+    width: 100%;
+}
+
+.intro-card,
+.about-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.about-info .info-card {
+    height: 100%;
+    flex: 1;
+}
+
+.about-grid > .info-card {
+    width: 100%;
 }
 
 /* ────────────────────────────────────────
-   SHARED CARD BASE
-──────────────────────────────────────── */
+   SHARED CARD BASE (Polished Depth)
+   ──────────────────────────────────────── */
 .intro-card,
 .info-card {
     background: #ffffff;
     border-radius: var(--about-radius-lg);
-    border: 1px solid rgba(147, 51, 234, 0.10);
+    border: 1px solid rgba(147, 51, 234, 0.07); /* Ultra subtle violet border */
     box-shadow: var(--about-shadow-md);
     position: relative;
     overflow: hidden;
@@ -182,15 +216,11 @@
 
 .info-card {
     display: flex;
-    gap: 4%;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.experience,
-.education {
-    width: 50%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--space-lg);
+    padding: clamp(1.5rem, 3vw, 2.25rem); /* Refined responsive padding */
 }
 
 .intro-card::before,
@@ -216,10 +246,10 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     background: radial-gradient(circle at top right,
-            rgba(147, 51, 234, 0.05) 0%,
+            rgba(147, 51, 234, 0.04) 0%,
             transparent 60%);
     border-radius: inherit;
     pointer-events: none;
@@ -230,9 +260,9 @@
 
 .intro-card:hover,
 .info-card:hover {
-    transform: translateY(-6px) scale(1.005);
-    box-shadow: var(--about-shadow-xl);
-    border-color: rgba(147, 51, 234, 0.22);
+    transform: translateY(-4px); /* Toned down translation to prevent excessive jump */
+    box-shadow: var(--about-shadow-lg); /* Upgraded hover shadow layer */
+    border-color: rgba(147, 51, 234, 0.16);
 }
 
 .intro-card:hover::after,
@@ -240,85 +270,123 @@
     opacity: 1;
 }
 
-/* ── Intro card (left) ── */
+/* ── Intro card ── */
 .intro-card {
-    padding: 48px;
+    padding: clamp(1.5rem, 3.5vw, 2.25rem); /* Fluid spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center-align content visually to match Education height */
 }
 
-.intro-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(145deg, var(--purple-600), var(--purple-400));
-    border-radius: 50%;
+.intro-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin-bottom: 32px;
-    box-shadow:
-        0 8px 24px rgba(147, 51, 234, 0.28),
-        0 2px 6px rgba(147, 51, 234, 0.16),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
-    transition: transform 0.45s var(--about-ease-spring), box-shadow 0.35s ease;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
     position: relative;
     z-index: 2;
 }
 
-.intro-card:hover .intro-icon {
-    transform: rotate(-5deg) scale(1.18);
+.profile-img {
+    width: clamp(70px, 9vw, 85px); /* Increased size for a premium, formal profile presentation */
+    height: clamp(70px, 9vw, 85px);
+    padding: 3px; /* Exposes the gradient background as a sleek border ring */
+    background: linear-gradient(145deg, var(--purple-600), var(--purple-400));
+    border-radius: 50%;
+    object-fit: cover;
     box-shadow:
-        0 16px 40px rgba(147, 51, 234, 0.36),
-        0 4px 12px rgba(147, 51, 234, 0.20),
+        0 6px 18px rgba(147, 51, 234, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition: transform 0.4s var(--about-ease-spring), box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.intro-card:hover .profile-img {
+    transform: rotate(-4deg) scale(1.05); /* Clean micro-interaction on card hover */
+    box-shadow:
+        0 10px 24px rgba(147, 51, 234, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Specific direct hover on the profile image ring for a premium glowing shadow effect */
+.profile-img:hover {
+    transform: rotate(-2deg) scale(1.1) !important;
+    box-shadow:
+        0 14px 32px rgba(147, 51, 234, 0.35), /* Vibrant glowing outer shadow */
         inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-.intro-card .intro-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+.intro-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.intro-card p {
-    font-size: 1.075rem;
-    line-height: 1.9;
+.intro-title h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    font-weight: 700;
+    color: var(--slate-900);
+    letter-spacing: -0.015em;
+    margin: 0;
+}
+
+.intro-title span {
+    font-size: 0.85rem;
+    color: var(--purple-700);
+    font-weight: 600;
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    line-height: 1.85; /* Refined for readability */
     color: var(--slate-600);
     position: relative;
     z-index: 2;
+    max-width: 600px; /* Limit line-width for eye-movement comfort */
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+}
+
+.intro-text:last-of-type {
+    margin-bottom: var(--space-lg);
 }
 
 .intro-card p strong {
-    color: var(--slate-800);
-    font-weight: 650;
+    color: var(--slate-900); /* Upgraded contrast */
+    font-weight: 600;
 }
 
-/* ── About info column (right) ── */
+.intro-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ── About info column ── */
 .about-info {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-}
-
-.info-card {
-    padding: 36px 40px;
+    gap: var(--space-lg);
 }
 
 .info-card .card-head {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 28px;
+    margin-bottom: 0;
     position: relative;
     z-index: 2;
 }
 
 .info-card .card-head i {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--purple-700);
     background: var(--purple-50);
-    width: 46px;
-    height: 46px;
+    width: 42px;
+    height: 42px;
     border-radius: var(--about-radius-sm);
     display: flex;
     align-items: center;
@@ -328,150 +396,156 @@
         background var(--about-transition),
         color var(--about-transition),
         transform 0.4s var(--about-ease-spring),
-        box-shadow var(--about-transition);
+        box-shadow var(--about-transition),
+        border-color var(--about-transition);
     flex-shrink: 0;
 }
 
 .info-card:hover .card-head i {
     background: var(--purple-700);
     color: #ffffff;
-    transform: scale(1.08) rotate(-4deg);
-    box-shadow: 0 8px 20px rgba(147, 51, 234, 0.30);
+    transform: scale(1.06) rotate(-3deg);
+    box-shadow: 0 6px 15px rgba(147, 51, 234, 0.22);
     border-color: var(--purple-700);
 }
 
 .info-card .card-head h1 {
     font-family: 'Syne', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--slate-900);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
 }
 
 /* ── Education timeline ── */
 .education-list {
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: var(--space-md);
+    width: 100%;
 }
 
 .education-item {
     display: flex;
-    gap: 1.2rem;
-    padding: 1.3rem;
-    border-radius: 18px;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-radius: var(--about-radius-md);
     background: #ffffff;
-    border: 1px solid rgba(147, 51, 234, .1);
-    transition: .3s;
+    border: 1px solid rgba(147, 51, 234, 0.05); /* Softer borders */
+    transition:
+        transform var(--about-transition),
+        box-shadow var(--about-transition),
+        border-color var(--about-transition);
+    will-change: transform;
 }
 
 .education-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(147, 51, 234, .12);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px -4px rgba(147, 51, 234, 0.06);
+    border-color: rgba(147, 51, 234, 0.12);
 }
 
 .edu-icon {
-    min-width: 58px;
-    height: 58px;
-    border-radius: 14px;
+    min-width: 50px;
+    height: 50px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
-    color: #9333ea;
-    background: linear-gradient(135deg, #faf5ff, #e9d5ff);
+    font-size: 1.15rem;
+    color: var(--purple-600);
+    background: linear-gradient(135deg, var(--purple-50), var(--purple-100));
+    flex-shrink: 0;
 }
 
 .edu-content {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
 }
 
 .edu-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: .4rem;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
 }
 
 .edu-top h4 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    color: #111827;
+    color: var(--slate-900);
+    letter-spacing: -0.01em;
 }
 
 .edu-score {
-    padding: .35rem .8rem;
+    padding: 0.25rem 0.65rem;
     border-radius: 50px;
-    background: #9333ea;
-    color: #fff;
-    font-size: .85rem;
+    background: var(--purple-600);
+    color: #ffffff;
+    font-size: 0.75rem;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .edu-college {
-    color: #4b5563;
-    margin: .5rem 0;
+    color: var(--slate-700); /* Upgraded color for WCAG AA standard contrast ratio */
+    margin: var(--space-xs) 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .edu-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--space-md);
 }
 
 .edu-meta span {
     display: flex;
     align-items: center;
-    gap: .45rem;
-    font-size: .9rem;
-    color: #6b7280;
+    gap: var(--space-xs);
+    font-size: 0.85rem;
+    color: var(--slate-600); /* Upgraded from slate-400 to slate-600 to solve contrast issue */
 }
-
 
 /* ── Tech stack tags ── */
-.about-info .tags-body {
-    padding-left: 0;
+.tags-body {
     display: flex;
     flex-direction: column;
-    gap: 22px;
-    position: relative;
-    z-index: 2;
+    gap: var(--space-lg);
+    width: 100%;
 }
 
-.tags-body::before {
-    display: none;
-}
-
-.tags-body .Frontend-list,
-.tags-body .Backend-list {
+.tags-body > div {
     display: flex;
     flex-direction: column;
 }
 
 .tags-body h2 {
-    font-size: 0.73rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--slate-400);
-    margin-bottom: 12px;
+    letter-spacing: 0.12em;
+    color: var(--slate-600); /* Upgraded contrast */
+    margin-bottom: var(--space-sm);
     font-weight: 700;
 }
 
 .tags-body .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
 }
 
-.tags-body .tags span {
+.tags-body .tags span,
+.intro-tags span {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 8px;
     background: var(--slate-50);
     border: 1px solid var(--slate-200);
     color: var(--slate-700);
-    padding: 7px 14px;
+    padding: 8px 16px;
     border-radius: var(--about-radius-sm);
     font-size: 0.875rem;
     font-weight: 500;
@@ -480,359 +554,281 @@
         background var(--about-transition),
         border-color var(--about-transition),
         color var(--about-transition),
-        transform 0.35s var(--about-ease-spring),
+        transform var(--about-transition),
         box-shadow var(--about-transition);
     will-change: transform;
 }
 
-.tags-body .tags span i {
+.tags-body .tags span i,
+.intro-tags span i {
     font-size: 1rem;
-    transition: transform 0.35s var(--about-ease-spring);
+    transition: transform var(--about-transition);
     flex-shrink: 0;
 }
 
-.tags-body .tags span:hover {
+.tags-body .tags span:hover,
+.intro-tags span:hover {
     background: var(--purple-50);
     border-color: var(--purple-200);
     color: var(--purple-700);
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 6px 18px rgba(147, 51, 234, 0.10);
+    transform: translateY(-2px); /* Subtle shift */
+    box-shadow: 0 4px 12px rgba(147, 51, 234, 0.06);
 }
 
-.tags-body .tags span:hover i {
-    transform: scale(1.25) rotate(-5deg);
+.tags-body .tags span:hover i,
+.intro-tags span:hover i {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+/* Accessibility Focus States for Keyboard Nav */
+.intro-card:focus-visible,
+.info-card:focus-visible,
+.education-item:focus-visible,
+.tags-body .tags span:focus-visible,
+.intro-tags span:focus-visible {
+    outline: 2px solid var(--purple-600);
+    outline-offset: 4px;
 }
 
 /* ==========================================
-   REVEAL ANIMATIONS
-   IntersectionObserver adds .visible to
-   trigger each keyframe sequence.
+   REVEAL ANIMATIONS (Optimized travel distances)
 ========================================== */
 
-/* ── Keyframes ── */
-
-/* Fade up — default for .reveal */
 @keyframes about-fade-up {
     from {
         opacity: 0;
-        transform: translateY(28px);
+        transform: translateY(16px); /* Reduced travel distance for smoother visual flow */
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Fade in from left — used for intro card */
 @keyframes about-fade-left {
     from {
         opacity: 0;
-        transform: translateX(-32px);
+        transform: translateX(-20px);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-/* Fade in from right — used for info column */
 @keyframes about-fade-right {
     from {
         opacity: 0;
-        transform: translateX(32px);
+        transform: translateX(20px);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-/* Scale + fade — used for section header */
 @keyframes about-scale-in {
     from {
         opacity: 0;
-        transform: translateY(16px) scale(0.97);
+        transform: translateY(10px) scale(0.99);
     }
-
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
 }
 
-/* Slide in for individual stagger children */
 @keyframes about-child-in {
     from {
         opacity: 0;
-        transform: translateY(18px);
+        transform: translateY(10px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* ── Base state: hidden before .visible is added ── */
 .about .reveal,
 .about .reveal-stagger>* {
     opacity: 0;
 }
 
-/* ── Generic .reveal — fade up ── */
 .about .reveal {
     animation: none;
-    /* stays invisible until .visible */
 }
 
 .about .reveal.visible {
-    animation: about-fade-up 0.72s var(--about-ease-out) both;
+    animation: about-fade-up 0.6s var(--about-ease-out) both;
 }
 
-/* ── Section header — scale in ── */
 .about .section-header.reveal.visible {
-    animation: about-scale-in 0.7s var(--about-ease-out) both;
+    animation: about-scale-in 0.65s var(--about-ease-out) both;
 }
 
-/* ── Intro card — fade from left ── */
 .about .intro-card.reveal.visible {
-    animation: about-fade-left 0.75s var(--about-ease-out) 0.1s both;
+    animation: about-fade-left 0.7s var(--about-ease-out) 0.1s both;
 }
 
-/* ── Info column wrapper — fade from right ── */
-.about .about-info.reveal.visible {
-    animation: about-fade-right 0.75s var(--about-ease-out) 0.18s both;
+.about .info-card.reveal.from-right.visible {
+    animation: about-fade-right 0.7s var(--about-ease-out) 0.18s both;
 }
 
-/* ── Stagger group: each child animates in sequence ── */
 .about .reveal-stagger>* {
     animation: none;
 }
 
 .about .reveal-stagger.visible>*:nth-child(1) {
-    animation: about-child-in 0.6s var(--about-ease-out) 0.05s both;
+    animation: about-child-in 0.5s var(--about-ease-out) 0.05s both;
 }
 
 .about .reveal-stagger.visible>*:nth-child(2) {
-    animation: about-child-in 0.6s var(--about-ease-out) 0.15s both;
+    animation: about-child-in 0.5s var(--about-ease-out) 0.15s both;
 }
 
 .about .reveal-stagger.visible>*:nth-child(3) {
-    animation: about-child-in 0.6s var(--about-ease-out) 0.25s both;
+    animation: about-child-in 0.5s var(--about-ease-out) 0.25s both;
 }
 
 .about .reveal-stagger.visible>*:nth-child(4) {
-    animation: about-child-in 0.6s var(--about-ease-out) 0.35s both;
+    animation: about-child-in 0.5s var(--about-ease-out) 0.35s both;
 }
 
-/* ── Tag spans stagger inside a visible card ── */
 .about .info-card.visible .tags-body .tags span,
 .about .reveal-stagger.visible .tags-body .tags span {
-    animation: about-child-in 0.5s var(--about-ease-out) both;
+    animation: about-child-in 0.4s var(--about-ease-out) both;
 }
 
 .about .info-card.visible .tags-body .tags span:nth-child(1),
 .about .reveal-stagger.visible .tags-body .tags span:nth-child(1) {
-    animation-delay: 0.28s;
+    animation-delay: 0.25s;
 }
 
 .about .info-card.visible .tags-body .tags span:nth-child(2),
 .about .reveal-stagger.visible .tags-body .tags span:nth-child(2) {
-    animation-delay: 0.34s;
+    animation-delay: 0.3s;
 }
 
 .about .info-card.visible .tags-body .tags span:nth-child(3),
 .about .reveal-stagger.visible .tags-body .tags span:nth-child(3) {
-    animation-delay: 0.40s;
+    animation-delay: 0.35s;
 }
 
 .about .info-card.visible .tags-body .tags span:nth-child(4),
 .about .reveal-stagger.visible .tags-body .tags span:nth-child(4) {
-    animation-delay: 0.46s;
+    animation-delay: 0.4s;
 }
 
 .about .info-card.visible .tags-body .tags span:nth-child(5),
 .about .reveal-stagger.visible .tags-body .tags span:nth-child(5) {
-    animation-delay: 0.52s;
+    animation-delay: 0.45s;
 }
 
 .about .info-card.visible .tags-body .tags span:nth-child(6),
 .about .reveal-stagger.visible .tags-body .tags span:nth-child(6) {
-    animation-delay: 0.58s;
+    animation-delay: 0.5s;
 }
 
 .about .info-card.visible .tags-body .tags span:nth-child(n+7),
 .about .reveal-stagger.visible .tags-body .tags span:nth-child(n+7) {
-    animation-delay: 0.62s;
+    animation-delay: 0.55s;
 }
 
-/* ── Timeline entries stagger inside a visible card ── */
 .about .info-card.visible .entry,
 .about .reveal-stagger.visible .entry {
-    animation: about-child-in 0.55s var(--about-ease-out) both;
+    animation: about-child-in 0.5s var(--about-ease-out) both;
 }
 
 .about .info-card.visible .entry:nth-child(1),
 .about .reveal-stagger.visible .entry:nth-child(1) {
-    animation-delay: 0.22s;
+    animation-delay: 0.2s;
 }
 
 .about .info-card.visible .entry:nth-child(2),
 .about .reveal-stagger.visible .entry:nth-child(2) {
-    animation-delay: 0.32s;
+    animation-delay: 0.3s;
 }
 
 .about .info-card.visible .entry:nth-child(3),
 .about .reveal-stagger.visible .entry:nth-child(3) {
-    animation-delay: 0.42s;
+    animation-delay: 0.4s;
 }
 
 .about .info-card.visible .entry:nth-child(n+4),
 .about .reveal-stagger.visible .entry:nth-child(n+4) {
-    animation-delay: 0.50s;
+    animation-delay: 0.48s;
 }
 
 /* ==========================================
-   RESPONSIVE
+   RESPONSIVE DESIGN SYSTEM
 ========================================== */
 
+/* ── Small Laptop (769px to 1024px) ── */
 @media (max-width: 1024px) {
     .about {
-        padding: 96px 0;
+        padding: clamp(3rem, 6vw, 4.5rem) 0;
     }
 
     .about-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
+        gap: var(--space-lg);
+    }
+
+    .my-info {
+        gap: var(--space-lg);
     }
 
     .intro-card {
-        padding: 40px;
+        padding: var(--space-xl);
     }
 
-    /* On single-column layout both cards fade up (no left/right offset) */
+    .info-card {
+        padding: var(--space-lg);
+    }
+
     .about .intro-card.reveal.visible,
-    .about .about-info.reveal.visible {
-        animation: about-fade-up 0.72s var(--about-ease-out) 0.1s both;
+    .about .info-card.reveal.from-right.visible {
+        animation: about-fade-up 0.65s var(--about-ease-out) 0.1s both;
     }
 }
 
+/* ── Tablet (481px to 768px) ── */
 @media (max-width: 768px) {
     .about {
-        padding: 72px 0;
+        padding: clamp(2.5rem, 5vw, 3.5rem) 0;
     }
 
     .about .container {
-        padding: 0 1.5rem;
+        padding: 0 var(--space-lg);
     }
 
     .about .section-header {
-        margin-bottom: 52px;
+        margin-bottom: var(--space-xl);
     }
 
-    .intro-card {
-        padding: 32px;
-    }
-
-    .info-card {
-        padding: 28px 30px;
-    }
-}
-
-@media (max-width: 576px) {
-    .about {
-        padding: 56px 0;
-    }
-
-    .about .section-header h1 {
-        font-size: 2rem;
-    }
-
-    .intro-card {
-        padding: 24px;
-    }
-
-    .intro-icon {
-        width: 52px;
-        height: 52px;
-        font-size: 1.3rem;
-        border-radius: 15px;
-        margin-bottom: 24px;
-    }
-
-    .intro-card p {
-        font-size: 1rem;
-        line-height: 1.8;
-    }
-
-    .info-card {
-        padding: 22px 20px;
-    }
-
-    .info-card .card-head {
-        gap: 12px;
-        margin-bottom: 22px;
-    }
-
-    .info-card .card-head i {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
-        border-radius: 10px;
-    }
-
-    .info-card .card-head h1 {
-        font-size: 1.15rem;
-    }
-
-    .about-info .card-body {
+    .my-info {
         flex-direction: column;
-        padding-left: 20px;
-        gap: 22px;
+        gap: var(--space-lg);
     }
 
-    .about-info .card-body::before {
-        left: 2px;
-    }
-
-    .about-info .entry::before {
-        left: -20px;
-        width: 8px;
-        height: 8px;
-        border-width: 2px;
-        top: 6px;
-    }
-
-    .tags-body .tags span {
-        padding: 6px 11px;
-        font-size: 0.835rem;
-        border-radius: 10px;
-    }
-
-    .tags-body .tags {
-        gap: 7px;
-    }
-
+    .intro-card,
     .about-info {
-        gap: 18px;
+        width: 100%;
+        flex: none;
     }
-}
 
-/* Tablet */
-@media (max-width:768px) {
+    .about-info .info-card {
+        height: auto;
+    }
 
     .education-item {
-        padding: 1.1rem;
-        gap: 1rem;
+        padding: var(--space-md);
+        gap: var(--space-md);
     }
 
     .edu-icon {
-        min-width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
+        min-width: 48px;
+        height: 48px;
+        font-size: 1.15rem;
     }
 
     .edu-top h4 {
@@ -840,95 +836,159 @@
     }
 
     .edu-score {
-        font-size: .8rem;
-        padding: .3rem .7rem;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.65rem;
     }
 
     .edu-college {
-        font-size: .95rem;
+        font-size: 0.9rem;
     }
 
     .edu-meta {
-        gap: .75rem;
+        gap: var(--space-sm);
     }
 
     .edu-meta span {
-        font-size: .85rem;
+        font-size: 0.85rem;
+    }
+    
+    .about::before {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .about::after {
+        width: 220px;
+        height: 220px;
     }
 }
 
-/* Mobile */
-@media (max-width:576px) {
+/* ── Mobile (320px to 480px) ── */
+@media (max-width: 480px) {
+    .about {
+        padding: clamp(2rem, 4vw, 3rem) 0;
+    }
+
+    .about .section-header h1 {
+        font-size: 1.85rem;
+    }
+
+    .intro-card {
+        padding: var(--space-md);
+    }
+
+    .profile-img {
+        width: 70px; /* Increased size on mobile for premium and formal look */
+        height: 70px;
+        padding: 3px; /* Retains gradient border outline on mobile */
+    }
+
+    .intro-text {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    .info-card {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .info-card .card-head {
+        gap: 10px;
+    }
+
+    .info-card .card-head i {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+
+    .info-card .card-head h1 {
+        font-size: 1.1rem;
+    }
+
+    .about-info .card-body {
+        padding-left: 0;
+        gap: var(--space-md);
+    }
 
     .education-item {
         flex-direction: column;
         align-items: flex-start;
-        gap: .9rem;
-        padding: 1rem;
+        gap: var(--space-sm);
+        padding: var(--space-md);
+        border-radius: var(--about-radius-sm);
     }
 
     .edu-icon {
-        width: 52px;
-        height: 52px;
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        font-size: 1rem;
+        border-radius: 10px;
     }
 
     .edu-top {
         flex-direction: column;
         align-items: flex-start;
-        gap: .6rem;
+        gap: var(--space-xs);
     }
 
     .edu-top h4 {
-        font-size: 1rem;
-        line-height: 1.4;
+        font-size: 0.95rem;
+        line-height: 1.3;
     }
 
     .edu-score {
         align-self: flex-start;
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
     }
 
     .edu-college {
-        font-size: .9rem;
-        line-height: 1.6;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin: var(--space-xs) 0;
     }
 
     .edu-meta {
         flex-direction: column;
-        gap: .5rem;
+        gap: var(--space-xs);
     }
 
     .edu-meta span {
-        font-size: .85rem;
+        font-size: 0.8rem;
+    }
+
+    .tags-body .tags span {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        border-radius: 8px;
+    }
+
+    .tags-body .tags {
+        gap: var(--space-xs);
+    }
+
+    .about::before,
+    .about::after {
+        display: none;
     }
 }
 
-/* Very Small Devices */
-@media (max-width:380px) {
-
-    .education-item {
-        padding: .9rem;
-    }
-
-    .edu-icon {
-        width: 46px;
-        height: 46px;
-        font-size: 1rem;
-    }
-
-    .edu-top h4 {
-        font-size: .95rem;
-    }
-
-    .edu-score {
-        font-size: .75rem;
-        padding: .25rem .6rem;
-    }
-
-    .edu-college {
-        font-size: .85rem;
-    }
-
-    .edu-meta span {
-        font-size: .8rem;
+/* ── Accessibility: Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+    .about .reveal,
+    .about .reveal-stagger>*,
+    .about .info-card.visible .tags-body .tags span,
+    .about .info-card.visible .entry,
+    .intro-icon,
+    .info-card .card-head i,
+    .education-item,
+    .tags-body .tags span {
+        animation: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+        transform: none !important;
     }
 }

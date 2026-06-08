@@ -507,7 +507,16 @@
     object-fit: contain;
     -webkit-user-drag: none;
     user-select: none;
-    pointer-events: none;
+    pointer-events: auto;
+    /* Enable hover events */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.profile-wrapper:hover img {
+    transform: translateY(-8px) scale(1.03);
+    /* Subtle lift and scale */
+    box-shadow: 0 20px 45px rgba(124, 58, 237, 0.28);
+    /* Smooth glowing violet shadow */
 }
 
 .skill-card {
@@ -626,22 +635,56 @@
 
 .reveal {
     opacity: 0;
-    transform: translateY(60px);
-    transition: opacity .8s ease, transform .8s ease;
+    transform: translateY(35px);
+    transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
 }
 
 .reveal.from-left {
-    transform: translateX(-60px);
+    transform: translateX(-35px);
 }
 
 .reveal.from-right {
-    transform: translateX(60px);
+    transform: translateX(35px);
+}
+
+.reveal.from-bottom {
+    transform: translateY(35px);
 }
 
 .reveal.visible,
 .reveal.active {
     opacity: 1;
     transform: translate(0, 0);
+}
+
+/* ── Hero Section Entrance Stagger Delay ── */
+.hero-left .reveal:nth-child(1) {
+    transition-delay: 0.08s;
+}
+
+.hero-left .reveal:nth-child(2) {
+    transition-delay: 0.16s;
+}
+
+.hero-left .reveal:nth-child(3) {
+    transition-delay: 0.24s;
+}
+
+.hero-left .reveal:nth-child(4) {
+    transition-delay: 0.32s;
+}
+
+.hero-left .reveal:nth-child(5) {
+    transition-delay: 0.40s;
+}
+
+.hero-left .reveal:nth-child(6) {
+    transition-delay: 0.48s;
+}
+
+.hero-image-section.reveal {
+    transition-delay: 0.2s;
 }
 
 /* =========================
@@ -715,6 +758,28 @@
 
     100% {
         transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Laptop Viewport Refinements (1200px to 1440px) */
+@media (min-width: 1200px) and (max-width: 1440px) {
+    .hero-inner {
+        gap: 40px;
+    }
+
+    .hero-visual {
+        width: 500px;
+        height: 500px;
+    }
+
+    .orbit-ring {
+        width: 400px;
+        height: 400px;
+    }
+
+    .profile-wrapper {
+        width: 320px;
+        height: 320px;
     }
 }
 

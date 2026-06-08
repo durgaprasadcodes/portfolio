@@ -48,7 +48,8 @@ function startRevealAnimation() {
             }
         });
     }, {
-        threshold: 0.3
+        threshold: 0.1, // Trigger when 10% of element is in view for smoother scrolling
+        rootMargin: '0px 0px -20px 0px' // Slightly trigger before element enters the edge
     });
 
     reveals.forEach(el => observer.observe(el));
@@ -64,11 +65,13 @@ function activateWelcome() {
 
     setTimeout(() => {
         welcome.classList.add('disappear');
+        // Welcome screen fade duration is 0.5s (500ms).
+        // Trigger reveal animations exactly when it finishes fading out to prevent
+        // animations from running hidden underneath the loader.
+        setTimeout(() => {
+            startRevealAnimation();
+        }, 200);
     }, 2000);
-
-    welcome.addEventListener('transitionend', () => {
-        startRevealAnimation();
-    });
 }
 
 window.addEventListener('load', activateWelcome);
