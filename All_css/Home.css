@@ -135,19 +135,13 @@
 
 .hamburger {
     display: none;
-
     width: 50px;
     height: 50px;
-
     border: none;
     cursor: pointer;
-
     border-radius: 12px;
-
     background: rgba(124, 58, 237, .1);
-
     color: #7c3aed;
-
     font-size: 1.5rem;
 }
 
@@ -225,20 +219,14 @@
 .navbar::before,
 .side-bar::before {
     content: "";
-
     position: absolute;
-
     width: 250px;
     height: 250px;
-
     background: radial-gradient(circle,
             rgba(168, 85, 247, .25),
             transparent 70%);
-
     border-radius: 50%;
-
     filter: blur(40px);
-
     z-index: -1;
 }
 
@@ -253,11 +241,10 @@
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE NAVBAR
 ========================= */
 
 @media(max-width:900px) {
-
     .nav-bar {
         display: none;
     }
@@ -463,6 +450,9 @@
     position: relative;
 }
 
+/* ==========================================
+   HERO VISUAL & MATHEMATICAL ORBIT SYSTEM
+========================================== */
 .hero-visual {
     position: relative;
     width: 600px;
@@ -470,6 +460,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
+
+    /* Default Variables (Large Desktop 1440px+) */
+    --orbit-radius: 230px;
+    --card-size: 68px;
 }
 
 .orbit-ring {
@@ -477,8 +472,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 480px;
-    height: 480px;
+    width: calc(2 * var(--orbit-radius));
+    height: calc(2 * var(--orbit-radius));
     border: 3px dashed rgba(124, 58, 237, 0.2);
     border-radius: 50%;
     z-index: 0;
@@ -490,13 +485,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
-    height: 400px;
+    width: calc(2 * var(--orbit-radius) - var(--card-size) - 12px);
+    height: calc(2 * var(--orbit-radius) - var(--card-size) - 12px);
     z-index: 3;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .profile-wrapper img {
@@ -508,41 +504,47 @@
     -webkit-user-drag: none;
     user-select: none;
     pointer-events: auto;
-    /* Enable hover events */
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .profile-wrapper:hover img {
     transform: translateY(-8px) scale(1.03);
-    /* Subtle lift and scale */
     box-shadow: 0 20px 45px rgba(124, 58, 237, 0.28);
-    /* Smooth glowing violet shadow */
 }
 
+/* Skill Card positioning */
 .skill-card {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    top: 50%;
+    left: 50%;
+    width: var(--card-size);
+    height: var(--card-size);
     background: #ffffff;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02);
-    animation: float 4s ease-in-out infinite;
     z-index: 5;
-    transition: all 0.3s ease;
-    gap: 0;
-    backdrop-filter: none;
     border: none;
     cursor: pointer;
-    flex-direction: column !important;
+    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease;
+    will-change: transform;
+    /* Mathematical Circular layout */
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--angle)));
 }
 
 .skill-inner {
     display: flex;
     flex-direction: column;
-    transition: .3s;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+    animation-delay: var(--delay);
+
 }
 
 .skill-card:hover .skill-inner {
@@ -550,84 +552,66 @@
 }
 
 .skill-card i {
-    font-size: 2.3rem !important;
+    font-size: clamp(1.2rem, 2.5vw, 2.3rem) !important;
 }
 
-.skill-card span {
-    font-size: 10px;
-    font-weight: 600;
-    color: #0f172a;
-}
-
-/* Skill card positions - Desktop */
-.typescript {
-    left: 45%;
-    top: 2%;
-    animation-delay: 0.7s;
-}
-
-.html {
-    top: 7%;
-    left: 20%;
-    animation-delay: 0.7s;
-}
-
-.css {
-    top: 25%;
-    left: 3%;
-    animation-delay: 1.5s;
-}
-
-.javascript {
-    top: 50%;
-    left: 1%;
-    animation-delay: 1.5s;
-}
-
+/* Angles for 11 icons: 360 / 11 ≈ 32.73deg per step */
 .react {
-    top: 72%;
-    left: 10%;
-    animation-delay: 0.7s;
-}
-
-.python {
-    top: 7%;
-    right: 20%;
-    color: #e1d964;
-    animation-delay: 0s;
-}
-
-.django {
-    top: 25%;
-    right: 4%;
-    color: #16b075;
-    animation-delay: 1.5s;
+    --angle: 0deg;
+    --delay: 0s;
 }
 
 .fastapi {
-    top: 50%;
-    right: 4%;
-    animation-delay: 2.2s;
+    --angle: 32.73deg;
+    --delay: -0.36s;
+}
+
+.javascript {
+    --angle: 65.45deg;
+    --delay: -0.73s;
+}
+
+.html {
+    --angle: 98.18deg;
+    --delay: -1.09s;
+}
+
+.css {
+    --angle: 130.91deg;
+    --delay: -1.45s;
+}
+
+.django {
+    --angle: 163.64deg;
+    --delay: -1.82s;
+}
+
+.python {
+    --angle: 196.36deg;
+    --delay: -2.18s;
 }
 
 .postgres {
-    bottom: 16%;
-    right: 10%;
-    animation-delay: 3.7s;
+    --angle: 229.09deg;
+    --delay: -2.55s;
 }
 
 .docker {
-    bottom: 4%;
-    left: 30%;
-    animation-delay: 3s;
+    color: #a855f7;
+    --angle: 261.82deg;
+    --delay: -2.91s;
+}
+
+.typescript {
+    --angle: 294.55deg;
+    --delay: -3.27s;
 }
 
 .Ml {
-    bottom: 4%;
-    right: 30%;
-    color: #a855f7;
-    animation-delay: 2.5s;
+    --angle: 327.27deg;
+    --delay: -3.64s;
 }
+
 
 /* =========================
    REVEAL ANIMATION
@@ -720,7 +704,6 @@
     background: #7c3aed;
     border-radius: 10px;
     transform: translateX(-50%);
-    animation: scroll 1.5s infinite;
 }
 
 /* =========================
@@ -747,7 +730,20 @@
     }
 
     50% {
-        transform: translateY(-15px);
+        transform: translateY(-12px);
+    }
+}
+
+
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
     }
 }
 
@@ -761,6 +757,11 @@
     }
 }
 
+
+/* ==========================================
+   BREAKPOINTS / RESPONSIVE ORBIT
+========================================== */
+
 /* Laptop Viewport Refinements (1200px to 1440px) */
 @media (min-width: 1200px) and (max-width: 1440px) {
     .hero-inner {
@@ -770,24 +771,22 @@
     .hero-visual {
         width: 500px;
         height: 500px;
-    }
-
-    .orbit-ring {
-        width: 400px;
-        height: 400px;
-    }
-
-    .profile-wrapper {
-        width: 320px;
-        height: 320px;
+        --orbit-radius: 190px;
+        --card-size: 60px;
     }
 }
 
-/* =========================
-   RESPONSIVE — 1200px
-   Image goes on TOP, text below
-========================= */
+/* Desktop Breakpoint (1024px–1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .hero-visual {
+        width: 500px;
+        height: 500px;
+        --orbit-radius: 190px;
+        --card-size: 60px;
+    }
+}
 
+/* Tablet Stacking (max-width: 1200px) - Stack vertically */
 @media (max-width: 1200px) {
     .hero {
         padding: 130px 6% 60px;
@@ -801,7 +800,6 @@
         gap: 20px;
     }
 
-    /* Image section rendered first visually */
     .hero-image-section {
         order: -1;
     }
@@ -817,6 +815,7 @@
 
     .hero-role {
         align-items: center;
+        justify-content: center;
     }
 
     .hero-desc {
@@ -835,176 +834,27 @@
     }
 
     .hero-visual {
-        width: 480px;
-        height: 480px;
+        width: 420px;
+        height: 420px;
+        --orbit-radius: 150px;
+        --card-size: 50px;
     }
-
-    .orbit-ring {
-        width: 380px;
-        height: 380px;
-    }
-
-    .profile-wrapper {
-        width: 300px;
-        height: 300px;
-    }
-
-    .skill-card {
-        width: 64px;
-        height: 64px;
-    }
-
-    .skill-card i {
-        font-size: 1.9rem !important;
-    }
-
-    /* Redistribute skill cards evenly around the ring */
-    .html {
-        top: 5%;
-        left: 18%;
-    }
-
-    .typescript {
-        top: 5%;
-        right: 18%;
-    }
-
-    .css {
-        top: 28%;
-        left: 2%;
-    }
-
-    .python {
-        top: 28%;
-        right: 2%;
-    }
-
-    .javascript {
-        top: 52%;
-        left: 2%;
-    }
-
-    .django {
-        top: 52%;
-        right: 2%;
-    }
-
-    .react {
-        bottom: 14%;
-        left: 16%;
-    }
-
-    .fastapi {
-        bottom: 14%;
-        right: 16%;
-    }
-
-    .docker {
-        bottom: 2%;
-        left: 35%;
-    }
-
-    .postgres {
-        bottom: 2%;
-        right: 35%;
-    }
-
-
-    /* hidden at mid-size to avoid crowding */
 }
 
-/* =========================
-   RESPONSIVE — 768px
-========================= */
+/* Tablet Breakpoint (768px–1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero-visual {
+        width: 420px;
+        height: 420px;
+        --orbit-radius: 150px;
+        --card-size: 50px;
+    }
+}
 
-@media (max-width: 768px) {
+/* Mobile Breakpoint (below 768px) */
+@media (max-width: 767px) {
     .hero {
         padding: 120px 5% 60px;
-    }
-
-    .hero-visual {
-        width: 380px;
-        height: 380px;
-    }
-
-    .orbit-ring {
-        width: 300px;
-        height: 300px;
-    }
-
-    .profile-wrapper {
-        width: 240px;
-        height: 240px;
-    }
-
-    .skill-card {
-        width: 56px;
-        height: 56px;
-        border-radius: 14px;
-    }
-
-    .skill-card i {
-        font-size: 1.6rem !important;
-    }
-
-    .skill-card span {
-        font-size: 9px;
-    }
-
-    /* Tighter ring positions */
-    .html {
-        top: 5%;
-        left: 17%;
-    }
-
-    .typescript {
-        top: 4%;
-        right: 14%;
-    }
-
-    .css {
-        top: 22%;
-        left: 0%;
-    }
-
-    .python {
-        top: 8%;
-        right: 16%;
-    }
-
-    .javascript {
-        top: 45%;
-        left: 0%;
-    }
-
-    .django {
-        top: 25%;
-        right: 3%;
-    }
-
-    .react {
-        top: 68%;
-        left: 6%;
-    }
-
-    .fastapi {
-        bottom: 12%;
-        right: 2%;
-    }
-
-    .docker {
-        bottom: 0%;
-        left: 30%;
-    }
-
-    .postgres {
-        bottom: 0%;
-        right: 30%;
-    }
-
-    .Ml {
-        bottom: 11%;
-        right: 7%;
     }
 
     .hero-title {
@@ -1024,100 +874,25 @@
         padding: 13px 24px;
         font-size: 0.95rem;
     }
-}
-
-/* =========================
-   RESPONSIVE — 480px
-========================= */
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 110px 4% 50px;
-    }
 
     .hero-visual {
         width: 320px;
         height: 320px;
+        --orbit-radius: 110px;
+        --card-size: 42px;
+        scale: 1.5;
     }
 
-    .orbit-ring {
-        width: 255px;
-        height: 255px;
+    .skill-inner {
+        animation: float1 4s linear infinite;
+        animation-delay: var(--delay);
     }
+}
 
-    .profile-wrapper {
-        width: 200px;
-        height: 200px;
-    }
-
-    .skill-card {
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-    }
-
-    .skill-card i {
-        font-size: 1.35rem !important;
-    }
-
-    .skill-card span {
-        font-size: 8px;
-    }
-
-    /* Compact ring positions */
-    .html {
-        top: 4%;
-        left: 17%;
-    }
-
-    .typescript {
-        top: 0%;
-        right: 12%;
-    }
-
-    .css {
-        top: 24%;
-        left: -1%;
-    }
-
-    .python {
-        top: 8%;
-        right: 12%;
-    }
-
-    .javascript {
-        top: 50%;
-        left: -1%;
-    }
-
-    .django {
-        top: 28%;
-        right: 2%;
-    }
-
-    .react {
-        bottom: 10%;
-        left: 10%;
-    }
-
-    .fastapi {
-        bottom: 12%;
-        right: 1%;
-    }
-
-    .docker {
-        bottom: -1%;
-        left: 32%;
-    }
-
-    .postgres {
-        bottom: 14%;
-        right: 10%;
-    }
-
-    .Ml {
-        bottom: -2%;
-        right: 28%;
+/* Mobile Breakpoint (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 110px 4% 50px;
     }
 
     .hero-title {
@@ -1149,96 +924,32 @@
     .scroll-hint {
         display: none;
     }
+
+    .hero-visual {
+        width: 300px;
+        height: 300px;
+        --orbit-radius: 100px;
+        --card-size: 38px;
+        scale: 1.5;
+    }
+
+    .skill-inner {
+        animation: float1 4s linear infinite;
+        animation-delay: var(--delay);
+    }
 }
 
-/* =========================
-   RESPONSIVE — 360px
-========================= */
-
+/* Small Mobile Breakpoint (max-width: 360px) */
 @media (max-width: 360px) {
     .hero {
         padding: 105px 4% 40px;
     }
 
     .hero-visual {
-        width: 280px;
-        height: 280px;
-    }
-
-    .orbit-ring {
-        width: 222px;
-        height: 222px;
-    }
-
-    .profile-wrapper {
-        width: 175px;
-        height: 175px;
-    }
-
-    .skill-card {
-        width: 44px;
-        height: 44px;
-    }
-
-    .skill-card i {
-        font-size: 1.15rem !important;
-    }
-
-    .skill-card span {
-        display: none;
-    }
-
-    .html {
-        top: 4%;
-        left: 16%;
-    }
-
-    .typescript {
-        top: 2%;
-        right: 10%;
-    }
-
-    .css {
-        top: 27%;
-        left: -2%;
-    }
-
-    .python {
-        top: 25%;
-        right: -2%;
-    }
-
-    .javascript {
-        top: 54%;
-        left: -2%;
-    }
-
-    .django {
-        top: 7%;
-        right: 17%;
-    }
-
-    .react {
-        bottom: 8%;
-        left: 8%;
-    }
-
-    .fastapi {
-        bottom: 13%;
-        right: 2%;
-    }
-
-    .docker {
-        bottom: -2%;
-        left: 30%;
-    }
-
-    .postgres {
-        bottom: 15%;
-        right: 12%;
-    }
-
-    .scroll-hint {
-        display: none;
+        width: 380px;
+        height: 380px;
+        --orbit-radius: 95px;
+        --card-size: 34px;
+        scale: 1.5;
     }
 }

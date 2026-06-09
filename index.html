@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
         rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <!-- Icons -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="All_css/Home.css">
     <link rel="stylesheet" href="All_css/About.css">
     <link rel="stylesheet" href="All_css/loader.css">
+    <link rel="stylesheet" href="All_css/footer.css">
+    <link rel="stylesheet" href="All_css/cursor.css">
 </head>
 
 <body class="alternate">
@@ -50,7 +52,8 @@
             <a href="#projects">Projects</a>
             <a href="#certification">Certifications</a>
             <a href="#contact">Contact</a>
-            <button class="resume">My Resume <i class="fas fa-download"></i></button>
+            <button class="resume" download="Durga_Prasad_Kota_Resume.pdf">My Resume <i
+                    class="fas fa-download"></i></button>
         </div>
         <button class="hamburger">&#9776;</button>
     </section>
@@ -64,7 +67,8 @@
         <a href="#projects">Projects</a>
         <a href="#certification">Certifications</a>
         <a href="#contact">Contact</a>
-        <button class="resume">My Resume <i class="fas fa-download"></i></button>
+        <button class="resume" download="Durga_Prasad_Kota_Resume.pdf">My Resume <i
+                class="fas fa-download"></i></button>
     </section>
 
     <!-- ═══════════ HERO ═══════════ -->
@@ -128,67 +132,67 @@
 
                     <div class="skill-card react">
                         <div class="skill-inner">
-                            <i class="devicon-react-original colored"></i>
+                            <i class="devicon-fastapi-plain colored"></i>
                         </div>
                     </div>
 
                     <div class="skill-card fastapi">
                         <div class="skill-inner">
-                            <i class="devicon-fastapi-plain colored"></i>
+                            <i class="devicon-postgresql-plain colored"></i>
                         </div>
                     </div>
 
                     <div class="skill-card javascript">
                         <div class="skill-inner">
-                            <i class="devicon-javascript-plain colored"></i>
+                            <i class="devicon-docker-plain colored"></i>
                         </div>
                     </div>
 
                     <div class="skill-card html">
                         <div class="skill-inner">
-                            <i class="devicon-html5-plain colored"></i>
+                            <i class="devicon-typescript-plain colored"></i>
                         </div>
                     </div>
 
                     <div class="skill-card css">
                         <div class="skill-inner">
-                            <i class="devicon-css3-plain colored"></i>
+                            <i class="devicon-react-plain colored"></i>
                         </div>
                     </div>
 
                     <div class="skill-card django">
                         <div class="skill-inner">
-                            <i class="devicon-django-plain "></i>
+                            <i class="devicon-javascript-plain colored"></i>
                         </div>
                     </div>
 
                     <div class="skill-card python">
                         <div class="skill-inner">
-                            <i class="fab fa-python colored"></i>
+                            <i class="devicon-css3-plain colored"></i>
                         </div>
                     </div>
 
                     <div class="skill-card postgres">
                         <div class="skill-inner">
-                            <i class="devicon-postgresql-plain colored"></i>
+                            <i class="devicon-html5-plain colored"></i>
                         </div>
                     </div>
 
                     <div class="skill-card docker">
                         <div class="skill-inner">
-                            <i class="devicon-docker-plain colored"></i>
+                            <i class="fas fa-brain colored "></i>
                         </div>
                     </div>
 
                     <div class="skill-card typescript">
                         <div class="skill-inner">
-                            <i class="devicon-typescript-plain colored"></i>
+                            <i class="devicon-python-plain colored"></i>
                         </div>
                     </div>
 
                     <div class="skill-card Ml">
                         <div class="skill-inner">
-                            <i class="fas fa-brain"></i>
+                            <i class="devicon-django-plain colored"></i>
                         </div>
                     </div>
                 </div>
@@ -377,38 +381,250 @@
     </section>
 
     <!-- ═══════════ SKILLS ═══════════ -->
-
+    <!-- <section class="skills" id="skills">
+        <h1>My Skills </h1>
+        <hr>
+        <div class="skill-show">
+            <div class="frontend stack">
+                <h1><i class="fas fa-laptop-code"></i> Frontend</h1>
+                <div class="frotend-bars">
+                    <div class="bar-outer">
+                        <i class="devicon-html5-plain colored"></i>
+                        <span></span>
+                        <p>95%</p>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-css3-plain colored"></i>
+                        <span></span>
+                        <p>90%</p>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-javascript-plain colored"></i>
+                        <span></span>
+                        <p>HTML</p>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-react-original colored"></i>
+                        <span></span>
+                        <p>HTML</p>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-typescript-plain colored"></i>
+                        <span></span>
+                        <p>HTML</p>
+                    </div>
+                </div>
+            </div>
+            <div class="backend stack">
+                <h1><i class="fas fa-server"></i> Backend</h1>
+                <div class="backend-bars">
+                    <div class="bar-outer">
+                        <i class="devicon-python-plain colored"></i>
+                        <span></span>
+                        <p>90%</p>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-django-plain colored"></i>
+                        <span></span>
+                        <p>85%</p>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-fastapi-plain colored"></i>
+                        <span></span>
+                        <p>85%</p>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="fas fa-brain"></i>
+                        <span></span>
+                        <p>80%</p>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-tensorflow-original colored"></i>
+                        <span></span>
+                        <p>80%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="database stack">
+                <h1><i class=" fas fa-database"></i> Databases </h1>
+                <div class="database-bars">
+                    <div class="bar-outer">
+                        <i class="devicon-mysql-plain colored"></i>
+                        <h3>MySQL</h3>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-postgresql-plain colored"></i>
+                        <h3>PostgreSQL</h3>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-mongodb-plain colored"></i>
+                        <h3>MongoDB</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="hosting stack">
+                <h1><i class=" fas fa-globe"></i> Hostings </h1>
+                <div class="hosting-bars">
+                    <div class="bar-outer">
+                        <i class="devicon-git-plain colored"></i>
+                        <h3>Git</h3>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-github-plain colored"></i>
+                        <h3>GitHub</h3>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-docker-plain colored"></i>
+                        <h3>Docker</h3>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-vercel-plain colored"></i>
+                        <h3>Vercel</h3>
+                    </div>
+                    <div class="bar-outer">
+                        <i class="devicon-vscode-plain colored"></i>
+                        <h3>VS Code</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="cards-container">
+                <div class="cards">
+                    <i class="devicon-html5-plain colored"></i>
+                    <i class="devicon-css3-plain colored"></i>
+                    <i class="devicon-javascript-plain colored"></i>
+                    <i class="devicon-react-original colored"></i>
+                    <i class="devicon-typescript-plain colored"></i>
+                    <i class="devicon-python-plain colored"></i>
+                    <i class="devicon-django-plain colored"></i>
+                    <i class="devicon-fastapi-plain colored"></i>
+                    <i class="devicon-mysql-plain colored"></i>
+                    <i class="devicon-postgresql-plain colored"></i>
+                    <i class="devicon-mongodb-plain colored"></i>
+                    <i class="fas fa-brain"></i>
+                    <i class="devicon-tensorflow-plain colored"></i>
+                    <i class="devicon-git-plain colored"></i>
+                    <i class="devicon-github-plain colored"></i>
+                    <i class="devicon-docker-plain colored"></i>
+                    <i class="devicon-vercel-plain colored"></i>
+                    <i class="devicon-vscode-plain colored"></i>
+                </div>
+                <div class="cards">
+                    <i class="devicon-html5-plain colored"></i>
+                    <i class="devicon-css3-plain colored"></i>
+                    <i class="devicon-javascript-plain colored"></i>
+                    <i class="devicon-react-original colored"></i>
+                    <i class="devicon-typescript-plain colored"></i>
+                    <i class="devicon-python-plain colored"></i>
+                    <i class="devicon-django-plain colored"></i>
+                    <i class="devicon-fastapi-plain colored"></i>
+                    <i class="devicon-mysql-plain colored"></i>
+                    <i class="devicon-postgresql-plain colored"></i>
+                    <i class="devicon-mongodb-plain colored"></i>
+                    <i class="fas fa-brain"></i>
+                    <i class="devicon-tensorflow-plain colored"></i>
+                    <i class="devicon-git-plain colored"></i>
+                    <i class="devicon-github-plain colored"></i>
+                    <i class="devicon-docker-plain colored"></i>
+                    <i class="devicon-vercel-plain colored"></i>
+                    <i class="devicon-vscode-plain colored"></i>
+                </div>
+            </div>
+        </div>
+    </section> -->
 
     <!-- Certifications -->
     <!-- <section class="certifications" id="certifications" class="activiteAfterLoad"></section> -->
 
-    <!-- ═══════════ FOOTER ═══════════ -->
-    <!-- <footer class="footer" class="activiteAfterLoad">
-        <div class="footer-social">
-            <a href="https://www.linkedin.com/in/durga-prasad-kota-9a5b65320" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Durgaprasad-kota" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://leetcode.com/u/Prashanth_Naidu/" target="_blank"><i class="fas fa-code"></i></a>
+    <!-- ═══════════ FOOTER ═══════════  -->
+    <div class="foot-mess activiteAfterLoad">
+        <p>Wanna Work Together ?</p>
+        <h1>HIRE ME !</h1>
+    </div>
+    <footer class="footer activiteAfterLoad">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/icon.png" alt="Logo">
+                        <span>Durga Prasad</span>.dev
+                    </div>
+                    <p class="footer-brand-text">
+                        Building scalable web applications, machine learning solutions, and smart digital systems to
+                        solve real-world problems.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://github.com/Durgaprasad-kota" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/durga-prasad-kota-9a5b65320" target="_blank"
+                            title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/alone_gamer_rolex" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://leetcode.com/u/Durga_Prasad_Kota/" target="_blank" title="LeetCode">
+                            <i class="devicon-leetcode-plain "></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="foot-link-tags">
+                    <!-- Column 2: Navigation -->
+                    <div class="footer-links-col">
+                        <h4>Navigation</h4>
+                        <ul class="footer-links">
+                            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                            <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                            <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="footer-links-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <a href="mailto:durgaprasad04289@gmail.com">durgaprasad04289@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Eluru, Andhra Pradesh, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-briefcase"></i>
+                            <span>Available for Opportunities</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2026 Durga Prasad. All rights reserved.</p>
+                <p class="footer-signature">Made with <i class="fas fa-heart signature-heart"></i> by Durga Prasad</p>
+            </div>
         </div>
-        <div class="footer-bottom">
-            <p class="footer-copy">&copy; 2025 Durga Prasad's Portfolio. All rights reserved.</p>
-            <nav class="footer-nav">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </footer> -->
+    </footer>
 
     <!-- ═══════════ CURSOR ═══════════ -->
-    <!-- <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-ring" id="cursor-ring"></div> -->
+    <div class="cursor-dot" id="cursor-dot">
+        <div class="cursor-dot-inner"></div>
+    </div>
+    <div class="cursor-ring" id="cursor-ring">
+        <div class="cursor-ring-inner"></div>
+    </div>
 
+    <!-- Smooth Scroll (Lenis) -->
+    <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
-
-<script src="js/script.js"></script>
