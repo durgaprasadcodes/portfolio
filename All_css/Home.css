@@ -4,8 +4,8 @@
 
 .navbar {
     width: 92%;
-    height: 80px;
-    margin: 10px auto 15px;
+    height: 60px;
+    margin: 5px auto;
     padding: 0 2rem;
     display: flex;
     align-items: center;
