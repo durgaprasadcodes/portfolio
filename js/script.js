@@ -192,6 +192,27 @@
       hlContainer.appendChild(div);
     });
 
+    // Education
+    const eduContainer = $('#aboutEducation');
+    if (eduContainer && about.education) {
+      eduContainer.innerHTML = `
+        <div class="education-card">
+          <div class="education-header">
+            <h3 class="education-title">${about.education.title}</h3>
+          </div>
+          <div class="education-details">
+            <div class="education-college">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>${about.education.college}</span>
+            </div>
+            <div class="education-cgpa">
+              <span class="cgpa-pill">(CGPA: ${about.education.cgpa})</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     // Timeline
     const tlContainer = $('#timelineContainer');
     about.timeline.forEach((item, i) => {

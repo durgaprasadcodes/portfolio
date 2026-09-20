@@ -120,6 +120,11 @@
       "RAG Applications",
       "Continuous Learning"
     ],
+    "education": {
+      "title": "Education",
+      "college": "Ramachandra College of Engineering - Eluru",
+      "cgpa": "8.9"
+    },
     "timeline": [
       {
         "year": "2024",
