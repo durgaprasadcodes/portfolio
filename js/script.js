@@ -734,7 +734,7 @@
 
       // Background text — slow, opposite direction
       if (bgText) {
-        bgText.style.transform = `translate(calc(-50% + ${dx * -20}px), calc(-50% + ${dy * -10}px))`;
+        bgText.style.transform = `translate(calc(-50% + ${dx * -200}px), calc(-50% + ${dy * -10}px)) scale(var(--bg-scale-x, 0.7), var(--bg-scale-y, 1.45))`;
       }
 
       // Hero text block — very subtle

@@ -306,7 +306,7 @@ button {
 }
 
 .hero-bg-text {
-  --bg-scale-x: 0.7;
+  --bg-scale-x: 0.8;
   --bg-scale-y: 1.45;
   position: absolute;
   top: 50%;
@@ -316,7 +316,7 @@ button {
   font-family: var(--font-display);
   font-size: clamp(3rem, 12vw, 10rem);
   font-weight: 900;
-  color: rgba(0, 0, 0, 0.03);
+  color: rgba(33, 33, 33, 0.03);
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
