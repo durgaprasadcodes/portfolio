@@ -307,18 +307,18 @@
       },
       {
         "id": 6,
-        "title": "Spam Email Classifier",
-        "category": "AI / NLP",
-        "description": "An application that classifies emails as spam or not spam using machine learning models based on user input.",
-        "image": "assets/spam_email_classifier.png",
+        "title": "AP & TS House Price Prediction",
+        "category": "ML",
+        "description": "A machine learning application that predicts house prices across Andhra Pradesh and Telangana based on property features such as location, area, bedrooms, and amenities.",
+        "image": "assets/house_price_prediction.png",
         "technologies": [
           "Python",
-          "NLP",
           "Machine Learning",
-          "FastAPI"
+          "FastAPI",
+          "Kaggle"
         ],
-        "github": "",
-        "live": ""
+        "github": "https://github.com/durgaprasadcodes/house_price_prediction.git",
+        "live": "https://ap-ts-house-price-prediction.vercel.app"
       }
     ]
   },
