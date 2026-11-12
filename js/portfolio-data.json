@@ -233,48 +233,18 @@
     "items": [
       {
         "id": 5,
-        "title": "AI Document Assistant",
+        "title": "Hirelense-ai Resume Analyzer",
         "category": "RAG / AI",
-        "description": "An AI-powered application that allows users to upload documents and ask questions using Retrieval-Augmented Generation.",
-        "image": "assets/pdf_chatbot.png",
+        "description": "An AI-powered application that allows users to upload resumes and shows Pros and Cons Using Retrieval-Augmented Generation.",
+        "image": "assets/hirelense.png",
         "technologies": [
           "React",
           "FastAPI",
           "LangChain",
-          "Vector Database"
+          "PostgreSQL"
         ],
-        "github": "",
-        "live": ""
-      },
-      {
-        "id": 2,
-        "title": "Full Stack Authentication System",
-        "category": "Full Stack",
-        "description": "A secure authentication system with registration, login, JWT authentication, HttpOnly cookies, and protected routes.",
-        "image": "assets/authentication.png",
-        "technologies": [
-          "React",
-          "FastAPI",
-          "PostgreSQL",
-          "JWT"
-        ],
-        "github": "https://github.com/durgaprasadcodes/Authentication_using_FastAPI.git",
-        "live": "https://authentication-using-fast-api.vercel.app"
-      },
-      {
-        "id": 3,
-        "title": "Student Performance Analysis ",
-        "category": "Machine Learning",
-        "description": "A web application that uses a trained machine learning model to make predictions from performance and feedback of students.",
-        "image": "assets/student_analysis.png",
-        "technologies": [
-          "Python",
-          "Scikit-learn",
-          "FastAPI",
-          "React"
-        ],
-        "github": "",
-        "live": ""
+        "github": "https://github.com/durgaprasadcodes/resume_parser.git",
+        "live": "https://hirelense-ai.vercel.app"
       },
       {
         "id": 4,

@@ -337,7 +337,7 @@
             </div>
           </div>
           <div class="project-image-container">
-            <img src="${p.image}" alt="${p.title}" loading="lazy" />
+            <img src="${p.image}" alt="${p.title}" loading="lazy"  />
             <div class="project-image-glow"></div>
           </div>
         </div>`;
