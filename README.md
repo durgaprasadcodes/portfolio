@@ -31,9 +31,7 @@
 <table>
   <tr>
     <td>
-      <img src="https://github.com/user-attachments/assets/9afb0615-a211-4bc8-9f74-8a687916e736"
-           alt="Portfolio Preview"
-           width="800">
+      <img width="930" height="453" alt="My Portfolio Preview" src="https://github.com/user-attachments/assets/4309d2f6-a7a2-48fb-8e5f-2b436313d43c" />
     </td>
   </tr>
 </table>
