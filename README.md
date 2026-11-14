@@ -184,7 +184,7 @@ Supports:
 ### Clone Repository
 
 ```bash
-git clone https://github.com/Durgaprasad4289/portfolio.git
+git clone https://github.com/durgaprasadcodes/portfolio.git
 ```
 
 ### Navigate to Project
@@ -213,7 +213,7 @@ Feel free to fork the project and submit a pull request.
 
 ### Durga Prasad
 
-- GitHub: https://github.com/Durgaprasad4289
+- GitHub: https://github.com/durgaprasadcodes
 - LinkedIn: https://linkedin.com/in/durgaprasadkota
 
 ---
